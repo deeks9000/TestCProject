@@ -3,7 +3,7 @@
 
 int GetMyNumber()
 {
-	int num = 20;
+	int num = 50;
 
 	return num;
 }

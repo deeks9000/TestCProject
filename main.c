@@ -1,5 +1,10 @@
 #include <stdio.h>
+#include <syslog.h>
+#include <unistd.h>
 #include "deeks.h"
+
+#define STR_SIZE 10000
+
 
 int main()
 {
@@ -8,6 +13,27 @@ int main()
 	int num = GetMyNumber();
 
 	printf("The number is %d\n", num);
+
+
+	openlog("DeeksProg", LOG_PID, LOG_USER);
+	syslog(LOG_DEBUG, "My debug message!!!");
+
+	for (int xx =0; xx <10; xx++)
+	{		
+		syslog(LOG_DEBUG, "%d", xx);
+		sleep(2);
+	}
+
+	char s1[] = "oppa";
+  	char s2[] = "gangnam";
+  	char s3[] = "style";
+
+	char result[STR_SIZE] = {0};
+    	snprintf(result, sizeof(result), "%s %s %s", s1, s2, s3);
+    	printf("%s\n", result);
+
+
+	printf("End of program.\n");	
 
 	return 0;
 }

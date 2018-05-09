@@ -28,7 +28,7 @@ int main()
 		sleep(1);
 	}
 
-	char s1[] = "oppa";
+	char s1[] = "deeks";   //"oppa";   // this is different to the 'master' branch!
   	char s2[] = "gangnam";
   	char s3[] = "style";
 
